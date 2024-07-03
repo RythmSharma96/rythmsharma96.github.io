@@ -252,12 +252,25 @@
             class="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white"
             >Contact</span
           >
-          
+
           <span
             class="block h-0.5 w-full bg-transparent group-hover:bg-yellow"
           ></span>
         </li>
         
+        <li class="group pl-6">
+          
+          <span
+          id='downloadButton'
+          class="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white"
+          >Resume</span
+        >
+
+          <span
+            class="block h-0.5 w-full bg-transparent group-hover:bg-yellow"
+          ></span>
+        </li>
+      
       </ul>
     </div>
     <div class="block lg:hidden">
@@ -1352,7 +1365,16 @@
     </div>
 
     <script src="/assets/js/main.js"></script>
-
+    <script>
+      document.getElementById('downloadButton').addEventListener('click', function() {
+          const link = document.createElement('a');
+          link.href = '/assets/rythms_resume.pdf';  // Path to your resume file
+          link.download = 'rythms_resume.pdf';  // Name the file will be downloaded as
+          document.body.appendChild(link);
+          link.click();
+          document.body.removeChild(link);
+      });
+  </script>
     
   </body>
 </html>
